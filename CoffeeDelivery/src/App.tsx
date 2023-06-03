@@ -1,4 +1,7 @@
-import { useState } from 'react'
+
+import { Router } from './Router'
+import { BrowserRouter } from 'react-router-dom'
+
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
@@ -6,7 +9,9 @@ import { GlobalStyle } from './styles/global'
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <h1>CoffeeDelivery</h1>
+      <BrowserRouter>
+      <Router />
+      </BrowserRouter>
     <GlobalStyle />
     </ThemeProvider>
   )
