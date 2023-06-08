@@ -1,4 +1,6 @@
 import { ShoppingCart, Package, Timer, Coffee } from "@phosphor-icons/react"
+import copo from '../../assets/home_copo.png'
+import { CoffeeCard } from "./components/CoffeeCard"
 
 export function Home() {
   return (
@@ -14,6 +16,11 @@ export function Home() {
         <span>Entrega rápida e rastreada</span>
         <Coffee weight="fill" />
         <span>O café chega fresquinho até você</span>
+      </div>
+      <img src={copo} alt="copo de cafe" />
+      <div>
+        <h2>Nossos Cafés</h2>
+        <CoffeeCard />
       </div>
     </div>
   )
