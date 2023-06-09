@@ -17,6 +17,7 @@ export function CoffeeCard() {
         <span>1</span>
         <Minus />
       </ButtonContainer>
+      <ShoppingCart weight='fill'/>
 
 
 
