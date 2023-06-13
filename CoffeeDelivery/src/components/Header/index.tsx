@@ -13,13 +13,13 @@ export function Header() {
       
       <HeaderInfo>
         <HeaderLocation>
-          <MapPin size={20} weight='fill' color='#8047F8' />
+          <MapPin size={22} weight='fill' color='#8047F8' />
           <span>Sorocaba, SP</span>
         </HeaderLocation>
 
         <HeaderCart>
           <NavLink to="/Checkout" title="checkout">
-            <ShoppingCart size={20} weight='fill' color='#C47F17' />
+            <ShoppingCart size={22} weight='fill' color='#C47F17' />
           </NavLink>
         </HeaderCart>
 

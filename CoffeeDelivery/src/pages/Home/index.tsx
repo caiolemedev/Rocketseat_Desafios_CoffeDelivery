@@ -1,4 +1,4 @@
-import { ShoppingCart, Package, Timer, Coffee } from "@phosphor-icons/react"
+import { ShoppingCart, Package, Timer, Coffee, IconContext } from "@phosphor-icons/react"
 import copo from '../../assets/home_copo.png'
 import { CoffeeCard } from "./components/CoffeeCard"
 import { HomeContainer, HomeIntro, HomeItems, HomeTitle, ImageContainer } from "./styles"
@@ -13,16 +13,27 @@ export function Home() {
             <p>Com o Coffee Delivery você rebece seu café onde estiver a qualquer hora</p>
           </HomeTitle>
 
-          <HomeItems>
-            <ShoppingCart weight="fill" />
-            <span>Compra simples e segura</span>
-            <Package weight="fill" />
-            <span>Embalagem mantém o café intacto</span>
-            <Timer weight="fill" />
-            <span>Entrega rápida e rastreada</span>
-            <Coffee weight="fill" />
-            <span>O café chega fresquinho até você</span>
-          </HomeItems>
+          <IconContext.Provider value={{color: "white", size: 22, weight: "fill"}}>
+            <HomeItems>
+              <p>
+                <ShoppingCart />
+                Compra simples e segura
+              </p>
+              <p>
+                <Package />
+                Embalagem mantém o café intacto
+              </p>
+              <p>
+                <Timer />
+                Entrega rápida e rastreada
+              </p>
+              <p>
+                <Coffee />
+                O café chega fresquinho até você
+              </p>
+            </HomeItems>
+          </IconContext.Provider>
+
         </div>
         <ImageContainer>
           <img src={copo} alt="copo de cafe" />

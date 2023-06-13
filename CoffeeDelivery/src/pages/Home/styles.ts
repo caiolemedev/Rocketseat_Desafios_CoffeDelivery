@@ -5,28 +5,51 @@ export const HomeContainer = styled.main`
   flex-direction: column;
 `
 export const HomeIntro = styled.div`
-  margin-top: 5.75rem;
+  margin-top: 5rem;
   display: flex;
-`
+  justify-content: space-between;
+  gap: 4rem;
+  `
 
 export const HomeTitle = styled.div`
 
   h1 {
-    background: ${(props) => props.theme.purple};
     font-family:  'Baloo 2', cursive;
     font-size: 3rem;
-
-    color: ${(props) => props.theme["base-title"]}
+    line-height: 3.875rem;
+    color: ${(props) => props.theme["base-title"]};
   }
 
   p {
+    margin-top: 1rem;
+    font-size: 1.275rem;
     color: ${(props) => props.theme["base-subtitle"]}
   }
 `
 export const HomeItems = styled.div`
-  background: black;
+  margin-top: 4.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    background: purple;
+    border-radius: 50%;
+  }
+
 `
 
 export const ImageContainer = styled.div`
-  max-width: 50%;
+  max-width: 22.5rem;
 `

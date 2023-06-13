@@ -4,6 +4,8 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 2rem 0rem;
 `
 
 export const HeaderInfo = styled.div`
@@ -17,7 +19,7 @@ export const HeaderLocation = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
 
   background: ${props => props.theme["purple-light"]};
   border-radius: 6px;
@@ -30,8 +32,7 @@ export const HeaderCart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
 
   background: ${props => props.theme["yellow-light"]};
   border-radius: 6px;
