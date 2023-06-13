@@ -2,7 +2,7 @@ import { MapPin, ShoppingCart } from '@phosphor-icons/react'
 
 import logo from '../../assets/logo.png'
 import { NavLink } from 'react-router-dom'
-import { HeaderContainer, HeaderInfo, HeaderLocation } from './styles'
+import { HeaderCart, HeaderContainer, HeaderInfo, HeaderLocation } from './styles'
 
 export function Header() {
   return (
@@ -13,13 +13,16 @@ export function Header() {
       
       <HeaderInfo>
         <HeaderLocation>
-          <MapPin size={20} weight='fill' color='' />
-          <span>Location</span>
+          <MapPin size={20} weight='fill' color='#8047F8' />
+          <span>Sorocaba, SP</span>
         </HeaderLocation>
 
-        <NavLink to="/Checkout" title="checkout">
-          <ShoppingCart size={20} weight='fill' />
-        </NavLink>
+        <HeaderCart>
+          <NavLink to="/Checkout" title="checkout">
+            <ShoppingCart size={20} weight='fill' color='#C47F17' />
+          </NavLink>
+        </HeaderCart>
+
       </HeaderInfo>     
     </HeaderContainer>
   )
