@@ -1,11 +1,12 @@
 import styled from "styled-components"
 
 export const HomeContainer = styled.main`
+  padding-right: 2rem;
   display: flex;
   flex-direction: column;
 `
 export const HomeIntro = styled.div`
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   gap: 4rem;
@@ -44,7 +45,7 @@ export const HomeItems = styled.div`
     width: 2rem;
     height: 2rem;
     padding: 0.5rem;
-    background: purple;
+    background: ${props => props.theme["yellow-dark"]};
     border-radius: 50%;
   }
 
@@ -52,4 +53,17 @@ export const HomeItems = styled.div`
 
 export const ImageContainer = styled.div`
   max-width: 22.5rem;
+`
+
+export const HomeCoffeeListCountainer = styled.div`
+  margin-top: 3rem;
+`
+
+export const HomeCoffeeList = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 `

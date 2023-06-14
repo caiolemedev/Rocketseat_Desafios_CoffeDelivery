@@ -1,7 +1,7 @@
 import { ShoppingCart, Package, Timer, Coffee, IconContext } from "@phosphor-icons/react"
 import copo from '../../assets/home_copo.png'
 import { CoffeeCard } from "./components/CoffeeCard"
-import { HomeContainer, HomeIntro, HomeItems, HomeTitle, ImageContainer } from "./styles"
+import { HomeCoffeeList, HomeCoffeeListCountainer, HomeContainer, HomeIntro, HomeItems, HomeTitle, ImageContainer } from "./styles"
 
 export function Home() {
   return (
@@ -39,10 +39,18 @@ export function Home() {
           <img src={copo} alt="copo de cafe" />
         </ImageContainer>
       </HomeIntro>
-      <div>
+      <HomeCoffeeListCountainer>
         <h2>Nossos Cafés</h2>
-        <CoffeeCard />
-      </div>
+        <HomeCoffeeList>
+          <CoffeeCard />
+          <CoffeeCard />
+          <CoffeeCard />
+          <CoffeeCard />
+          <CoffeeCard />
+          <CoffeeCard />
+        </HomeCoffeeList>
+
+      </HomeCoffeeListCountainer>
     </HomeContainer>
   )
 }
