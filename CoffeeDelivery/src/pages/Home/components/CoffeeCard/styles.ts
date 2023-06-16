@@ -11,10 +11,32 @@ export const CoffeeCountainer = styled.div`
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+  padding: 1.25rem;
 
   img {
     width: 7.5rem;
   }
+
+  .CoffeeName {
+    margin-top: 1rem;
+    font-family: "Baloo 2";
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: ${props => props.theme["base-subtitle"]};
+  }
+
+  .CoffeeDescription {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: ${props => props.theme["base-label"]};
+  }
+`
+
+export const CoffeeType = styled.div`
+  color: ${props => props.theme["yellow-dark"]};
+
 `
 
 export const ButtonContainer = styled.button`

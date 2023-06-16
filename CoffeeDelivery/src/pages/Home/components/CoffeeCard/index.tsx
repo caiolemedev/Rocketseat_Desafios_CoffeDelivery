@@ -8,8 +8,8 @@ export function CoffeeCard() {
     <CoffeeCountainer>
       <img src={expresso} alt="expresso" />
       <p>TRADICIONAL</p>
-      <p>Expresso Tradicional</p>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <p className='CoffeeName'>Expresso Tradicional</p>
+      <p className='CoffeeDescription'>O tradicional café feito com água quente e grãos moídos</p>
       <span>R$</span><span>9,90</span>
 
       <ButtonContainer>
