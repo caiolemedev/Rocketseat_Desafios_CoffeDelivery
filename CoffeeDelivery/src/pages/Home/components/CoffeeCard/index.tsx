@@ -1,7 +1,7 @@
 import { Plus, Minus, ShoppingCart } from '@phosphor-icons/react'
 import expresso from '../../../../assets/expresso.png'
 
-import { ButtonContainer, CoffeeCountainer } from './styles'
+import { CoffeeButtonContainer, CoffeeCart, CoffeeCountainer, CoffeePlusMinus } from './styles'
 
 export function CoffeeCard() {
   return (
@@ -10,14 +10,18 @@ export function CoffeeCard() {
       <p>TRADICIONAL</p>
       <p className='CoffeeName'>Expresso Tradicional</p>
       <p className='CoffeeDescription'>O tradicional café feito com água quente e grãos moídos</p>
-      <span>R$</span><span>9,90</span>
 
-      <ButtonContainer>
-        <Plus />
-        <span>1</span>
-        <Minus />
-      </ButtonContainer>
-      <ShoppingCart weight='fill'/>
+      <CoffeeButtonContainer>
+        <span>R$</span><span className='CoffeePrice'>9,90</span>
+        <CoffeePlusMinus>
+          <Minus />
+          <span>1</span>
+          <Plus />
+        </CoffeePlusMinus>
+        <CoffeeCart>
+          <ShoppingCart size={22} weight='fill' color='white'/>
+        </CoffeeCart>
+      </CoffeeButtonContainer>
       
     </CoffeeCountainer>
   )

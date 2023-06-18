@@ -1,9 +1,7 @@
 import styled from "styled-components"
 
 export const CoffeeCountainer = styled.div`
-/*   background: ${props => props.theme["base-card"]};
- */
-  background: black;
+  background: ${props => props.theme["base-card"]};
 
   width: 16rem;
   display: flex;
@@ -39,17 +37,35 @@ export const CoffeeType = styled.div`
 
 `
 
-export const ButtonContainer = styled.button`
+export const CoffeeButtonContainer = styled.button`
   border: 0;
-  padding: 0.5rem;
-  border-radius: 8px;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-    
-  cursor: pointer;
 
+`
+
+export const CoffeePlusMinus = styled.div`
   background: ${(props) => props.theme["base-button"]};
+
+  display: flex;
+  algin-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  padding: 0.5rem;
+  border-radius: 8px;
+
+  cursor: pointer;
+`
+
+export const CoffeeCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+
+  background: ${props => props.theme["purple-dark"]};
+  border-radius: 6px;
 `
