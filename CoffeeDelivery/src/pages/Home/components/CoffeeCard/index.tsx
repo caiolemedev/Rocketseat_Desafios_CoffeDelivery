@@ -7,7 +7,7 @@ export function CoffeeCard() {
   return (
     <CoffeeCountainer>
       <img src={expresso} alt="expresso" />
-      <p>TRADICIONAL</p>
+      <p className='CoffeeType'>TRADICIONAL</p>
       <p className='CoffeeName'>Expresso Tradicional</p>
       <p className='CoffeeDescription'>O tradicional café feito com água quente e grãos moídos</p>
 
