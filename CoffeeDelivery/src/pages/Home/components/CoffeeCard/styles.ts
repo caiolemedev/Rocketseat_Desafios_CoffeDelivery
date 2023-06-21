@@ -40,6 +40,7 @@ export const CoffeeCountainer = styled.div`
     margin-top: 0.5rem;
     font-size: 0.875rem;
     text-align: center;
+    padding: 0.5rem;
     color: ${props => props.theme["base-label"]};
   }
 `
