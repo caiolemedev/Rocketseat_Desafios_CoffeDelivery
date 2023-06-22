@@ -9,22 +9,13 @@ export const CoffeeCountainer = styled.div`
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 0 1.25rem 0 1.25rem;
+  padding: 0 1.25rem 1.25rem 1.25rem;~
+
+  border-radius: 20rem;
 
   img {
     margin-top: -1.25rem;
     width: 7.5rem;
-  }
-
-  .CoffeeType {
-    background: ${props => props.theme["yellow-light"]};
-
-    margin-top: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 3rem;
-
-    font-size: 0.625rem;
-    color: ${props => props.theme["yellow-dark"]};
   }
 
   .CoffeeName {
@@ -40,8 +31,27 @@ export const CoffeeCountainer = styled.div`
     margin-top: 0.5rem;
     font-size: 0.875rem;
     text-align: center;
-    padding: 0.5rem;
     color: ${props => props.theme["base-label"]};
+  }
+`
+
+export const CoffeeTypeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+
+  .CoffeeType {
+    background: ${props => props.theme["yellow-light"]};
+
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3rem;
+
+    font-size: 0.625rem;
+    font-weight: 800;
+    color: ${props => props.theme["yellow-dark"]};
   }
 `
 
@@ -83,7 +93,7 @@ export const CoffeeCart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.5rem;
 
   background: ${props => props.theme["purple-dark"]};
   border-radius: 6px;

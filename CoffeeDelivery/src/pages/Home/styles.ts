@@ -60,7 +60,8 @@ export const HomeCoffeeListCountainer = styled.div`
 `
 
 export const HomeCoffeeList = styled.div`
-  margin-top: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
