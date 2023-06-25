@@ -55,7 +55,7 @@ export const CoffeeTypeContainer = styled.div`
   }
 `
 
-export const CoffeeButtonContainer = styled.button`
+export const CoffeeButtonContainer = styled.div`
   margin-top: 1.5rem;
   border: 0;
   display: flex;
@@ -87,6 +87,12 @@ export const CoffeePlusMinus = styled.div`
   border-radius: 8px;
 
   cursor: pointer;
+
+  button {
+    background: none;
+    border: none;
+    outline: none;
+  }
 `
 
 export const CoffeeCart = styled.div`

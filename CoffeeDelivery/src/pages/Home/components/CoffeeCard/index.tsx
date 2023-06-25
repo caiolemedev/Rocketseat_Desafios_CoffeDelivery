@@ -15,9 +15,21 @@ export interface CoffeeInfo {
 export function CoffeeCard() {
   const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(5)
 
-  function handleReduceCoffeeQtyScreen(coffeeQtyScreen: number) {
-    if (coffeeQtyScreen == 1) setCoffeeQtyScreen(1);
-    setCoffeeQtyScreen(coffeeQtyScreen-1) }
+  function handleReduceCoffeeQtyScreen() {
+    if (coffeeQtyScreen == 1) {
+      setCoffeeQtyScreen((state) => {return state})
+    } else {
+      setCoffeeQtyScreen((state) => {return state-1})
+    } 
+  }
+
+  function handleAddCoffeeQtyScreen() {
+    if (coffeeQtyScreen == 9) {
+      setCoffeeQtyScreen((state) => {return state})
+    } else {
+      setCoffeeQtyScreen((state) => {return state+1})
+    } 
+  }
 
   return (
     <CoffeeContainer>
@@ -32,13 +44,19 @@ export function CoffeeCard() {
 
       <CoffeeButtonContainer>
         <span>R$</span><span className='CoffeePrice'>9,90</span>
+        
         <CoffeePlusMinus>
           <button type='button' onClick={handleReduceCoffeeQtyScreen}>
             <Minus />
           </button>
+          
           <span>{coffeeQtyScreen}</span>
-          <Plus />
+          
+          <button type='button' onClick={handleAddCoffeeQtyScreen}>
+            <Plus />
+          </button>
         </CoffeePlusMinus>
+        
         <CoffeeCart>
           <ShoppingCart size={22} weight='fill' color='white'/>
         </CoffeeCart>
