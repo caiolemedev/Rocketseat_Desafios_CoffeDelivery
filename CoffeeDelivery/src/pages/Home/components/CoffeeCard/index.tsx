@@ -3,6 +3,7 @@ import expresso from '../../../../assets/expresso.png'
 
 import { CoffeeButtonContainer, CoffeeCart, CoffeeContainer, CoffeePlusMinus, CoffeeTypeContainer } from './styles'
 import { useState } from 'react'
+import { CoffeeTypesExpresso } from './coffeetypes'
 
 export interface CoffeeInfo {
   CoffeeImg: string;
@@ -13,7 +14,7 @@ export interface CoffeeInfo {
 }
 
 export function CoffeeCard() {
-  const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(5)
+  const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(1)
 
   function handleReduceCoffeeQtyScreen() {
     if (coffeeQtyScreen == 1) {
@@ -35,15 +36,14 @@ export function CoffeeCard() {
     <CoffeeContainer>
       <img src={expresso} alt="expresso" />
       <CoffeeTypeContainer>
-        <span className='CoffeeType'>TRADICIONAL</span>
-        <span className='CoffeeType'>ESPECIAL</span>
-        <span className='CoffeeType'>GELADO</span>
+        <span className='CoffeeType'>{CoffeeTypesExpresso.TYPE1}</span>
+        <span className='CoffeeType'>{CoffeeTypesExpresso.TYPE2}</span>
       </CoffeeTypeContainer>
-      <p className='CoffeeName'>Expresso Tradicional</p>
-      <p className='CoffeeDescription'>O tradicional café feito com água quente e grãos moídos</p>
+      <p className='CoffeeName'>{CoffeeTypesExpresso.NAME}</p>
+      <p className='CoffeeDescription'>{CoffeeTypesExpresso.DESCRIPTION}</p>
 
       <CoffeeButtonContainer>
-        <span>R$</span><span className='CoffeePrice'>9,90</span>
+        <span>R$</span><span className='CoffeePrice'>{CoffeeTypesExpresso.PRICE}</span>
         
         <CoffeePlusMinus>
           <button type='button' onClick={handleReduceCoffeeQtyScreen}>

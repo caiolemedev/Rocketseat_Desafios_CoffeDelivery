@@ -92,6 +92,7 @@ export const CoffeePlusMinus = styled.div`
     background: none;
     border: none;
     outline: none;
+    box-shadow: 0px 0px 0px transparent;
   }
 `
 
@@ -99,7 +100,7 @@ export const CoffeeCart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0.5rem;
+  padding: 0.375rem 0.5rem;
 
   background: ${props => props.theme["purple-dark"]};
   border-radius: 6px;

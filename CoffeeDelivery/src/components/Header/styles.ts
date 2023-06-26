@@ -32,7 +32,7 @@ export const HeaderCart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.375rem 0.75rem;
 
   background: ${props => props.theme["yellow-light"]};
   border-radius: 6px;
