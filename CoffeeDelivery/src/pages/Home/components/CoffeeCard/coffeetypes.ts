@@ -6,14 +6,10 @@ export interface CoffeeInfo {
   CoffeePrice: string;
 }
 
-const CoffeeTypes: CoffeeInfo[] = [{
-  CoffeeName: 'Expresso Tradicional',
-  CoffeeImg: '../../../../assets/expresso.png',
-  CoffeeType: ['TRADICIONAL'],
-  CoffeeDescription: 'O tradicional café feito com água quente e grãos moídos',
-  CoffeePrice: '9,90',
-}]
-
-export function getCoffee(coffeeType: string) {
-  if (coffeeType == 'expresso') return CoffeeTypes[1]
+export enum CoffeeTypesExpresso {
+  NAME = 'Expresso Tradicional',
+  IMG = '../../../../assets/expresso.png',
+  TYPE1 = ['TRADICIONAL'],
+  DESCRIPTION = 'O tradicional café feito com água quente e grãos moídos',
+  PRICE = '9,90',
 }
