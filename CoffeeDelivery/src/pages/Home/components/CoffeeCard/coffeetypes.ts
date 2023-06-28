@@ -1,10 +1,19 @@
+export interface CoffeeInfo {
+  CoffeeImg: string;
+  CoffeeType: string[];
+  CoffeeName: string;
+  CoffeeDescription: string;
+  CoffeePrice: string;
+}
 
-export enum CoffeeTypesExpresso {
-  NAME = 'Expresso Tradicional',
-  IMG = '../../../../assets/expresso.png',
-  TYPE1 = 'TRADICIONAL',
-  TYPE2 = 'ESPECIAL',
-  TYPE3 = 'GELADO',
-  DESCRIPTION = 'O tradicional café feito com água quente e grãos moídos',
-  PRICE = '9,90',
+const CoffeeTypes: CoffeeInfo[] = [{
+  CoffeeName: 'Expresso Tradicional',
+  CoffeeImg: '../../../../assets/expresso.png',
+  CoffeeType: ['TRADICIONAL'],
+  CoffeeDescription: 'O tradicional café feito com água quente e grãos moídos',
+  CoffeePrice: '9,90',
+}]
+
+export function getCoffee(coffeeType: string) {
+  if (coffeeType == 'expresso') return CoffeeTypes[1]
 }

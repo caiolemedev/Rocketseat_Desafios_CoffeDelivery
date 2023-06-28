@@ -32,6 +32,8 @@ export function CoffeeCard() {
     } 
   }
 
+  const CoffeeTypesExpresso = require('./coffeetypes')
+
   return (
     <CoffeeContainer>
       <img src={expresso} alt="expresso" />
