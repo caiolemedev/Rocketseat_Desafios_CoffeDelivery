@@ -2,6 +2,7 @@ import { ShoppingCart, Package, Timer, Coffee, IconContext } from "@phosphor-ico
 import copo from '../../assets/home_copo.png'
 import { CoffeeCard } from "./components/CoffeeCard"
 import { HomeCoffeeList, HomeCoffeeListCountainer, HomeContainer, HomeIntro, HomeItems, HomeTitle, ImageContainer } from "./styles"
+import { coffeeTypes } from "./components/CoffeeCard/coffeetypes"
 
 export function Home() {
   return (
@@ -42,12 +43,15 @@ export function Home() {
       <HomeCoffeeListCountainer>
         <h2>Nossos Cafés</h2>
         <HomeCoffeeList>
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
+          {coffeeTypes.map((coffee) => {return (
+            <div><CoffeeCard 
+              CoffeeName={coffee.CoffeeName}
+              CoffeeDescription={coffee.CoffeeDescription}
+              CoffeeType={coffee.CoffeeType}
+              CoffeePrice={coffee.CoffeePrice}
+            /></div>
+          )})}
+          
         </HomeCoffeeList>
 
       </HomeCoffeeListCountainer>

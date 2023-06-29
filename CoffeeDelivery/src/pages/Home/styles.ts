@@ -31,7 +31,7 @@ export const HomeItems = styled.div`
   margin-top: 4.125rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 2.5rem;
 
