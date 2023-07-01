@@ -3,7 +3,7 @@ import expresso from '../../../../assets/expresso.png'
 
 import { CoffeeButtonContainer, CoffeeCart, CoffeeContainer, CoffeePlusMinus, CoffeeTypeContainer } from './styles'
 import { useState } from 'react'
-import { CoffeeInfo, coffeeTypes } from './coffeetypes'
+import { CoffeeInfo } from './coffeetypes'
 
 export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePrice}: CoffeeInfo) {
   const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(1)
@@ -24,17 +24,14 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
     } 
   }
 
-  
-  function getCoffee(coffeeType: string) {
-    if (coffeeType == 'expresso') return coffeeTypes[1]
-  }
-
   return (
     <CoffeeContainer>
       <img src={expresso} alt="expresso" />
 
       <CoffeeTypeContainer>
-        <span className='CoffeeType'>{CoffeeType}</span>
+        {CoffeeType.map((type) => {return (
+          <span className='CoffeeType'>{type}</span>
+        )})}
       </CoffeeTypeContainer>
 
       <p className='CoffeeName'>{CoffeeName}</p>
