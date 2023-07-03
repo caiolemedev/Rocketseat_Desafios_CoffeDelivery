@@ -86,22 +86,31 @@ export const CoffeePlusMinus = styled.div`
   padding: 0.5rem;
   border-radius: 8px;
 
-  cursor: pointer;
-
   button {
+    display: flex;
+    algin-items: center;
+    justify-content: center;
+
     background: none;
     border: none;
     outline: none;
     box-shadow: 0px 0px 0px transparent;
+    cursor: pointer;
   }
 `
 
-export const CoffeeCart = styled.div`
+export const CoffeeCart = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.375rem 0.5rem;
 
   background: ${props => props.theme["purple-dark"]};
+
   border-radius: 6px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 0px transparent;
+
+  cursor: pointer;
 `

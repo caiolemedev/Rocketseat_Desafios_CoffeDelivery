@@ -24,6 +24,10 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
     } 
   }
 
+  function addToCart() {
+    console.log(CoffeeName)
+  }
+
   return (
     <CoffeeContainer>
       <img src={expresso} alt="expresso" />
@@ -52,8 +56,8 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
           </button>
         </CoffeePlusMinus>
         
-        <CoffeeCart>
-          <ShoppingCart size={22} weight='fill' color='white'/>
+        <CoffeeCart onClick={addToCart}>
+            <ShoppingCart size={22} weight='fill' color='white'/>
         </CoffeeCart>
       </CoffeeButtonContainer>
       
