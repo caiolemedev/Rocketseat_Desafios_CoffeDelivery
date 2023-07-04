@@ -7,6 +7,7 @@ import { CoffeeInfo } from './coffeetypes'
 
 export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePrice}: CoffeeInfo) {
   const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(1)
+  const [coffeeCart , setCoffeeCart] = useState<string[]>([])
 
   function handleReduceCoffeeQtyScreen() {
     if (coffeeQtyScreen == 1) {
@@ -25,7 +26,9 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
   }
 
   function addToCart() {
-    console.log(CoffeeName)
+    const newCoffeeCart = [...coffeeCart, CoffeeName]
+    setCoffeeCart(newCoffeeCart)
+    console.log(coffeeCart)
   }
 
   return (
