@@ -37,7 +37,7 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
 
       <CoffeeTypeContainer>
         {CoffeeType.map((type) => {return (
-          <span className='CoffeeType'>{type}</span>
+          <span key={type} className='CoffeeType'>{type}</span>
         )})}
       </CoffeeTypeContainer>
 

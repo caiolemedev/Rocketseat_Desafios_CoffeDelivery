@@ -44,12 +44,13 @@ export function Home() {
         <h2>Nossos Cafés</h2>
         <HomeCoffeeList>
           {coffeeTypes.map((coffee) => {return (
-            <div><CoffeeCard
+            <CoffeeCard
+              key={coffee.CoffeeName}
               CoffeeName={coffee.CoffeeName}
               CoffeeDescription={coffee.CoffeeDescription}
               CoffeeType={coffee.CoffeeType}
               CoffeePrice={coffee.CoffeePrice}
-            /></div>
+            />
           )})}
           
         </HomeCoffeeList>
