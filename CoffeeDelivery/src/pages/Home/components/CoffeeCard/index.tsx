@@ -2,12 +2,19 @@ import { Plus, Minus, ShoppingCart } from '@phosphor-icons/react'
 import expresso from '../../../../assets/expresso.png'
 
 import { CoffeeButtonContainer, CoffeeCart, CoffeeContainer, CoffeePlusMinus, CoffeeTypeContainer } from './styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CoffeeInfo } from './coffeetypes'
+
+interface CoffeeCartItem {
+  CartCoffeeName: string
+  CartCoffeeQty: number
+}
+
+interface CoffeeCart extends Array<CoffeeCartItem>{}
 
 export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePrice}: CoffeeInfo) {
   const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(1)
-  const [coffeeCart , setCoffeeCart] = useState<string[]>([])
+  const [coffeeCart , setCoffeeCart] = useState<CoffeeCart>([])
 
   function handleReduceCoffeeQtyScreen() {
     if (coffeeQtyScreen == 1) {
@@ -26,10 +33,33 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
   }
 
   function addToCart() {
-    const newCoffeeCart = [...coffeeCart, CoffeeName]
-    setCoffeeCart(newCoffeeCart)
-    console.log(coffeeCart)
+/*     const updatedCoffeeItem = coffeeCart.findIndex((item) => {
+      return item.CartCoffeeName === CoffeeName
+    })
+
+    if (updatedCoffeeItem < 0 ) {
+      return coffeeCart
+    }
+
+    return coffeeCart[updatedCoffeeItem].CartCoffeeQty = coffeeQtyScreen
+
+    coffeeCart.map(item => {
+      if (item.CartCoffeeName == CoffeeName) {
+        updatedCoffeeItemQty = item.CartCoffeeQty+coffeeQtyScreen
+      }
+      else {
+        updatedCoffeeItemQty = coffeeQtyScreen
+      }
+    })
+
+
+
+    setCoffeeCart() */
   }
+
+  useEffect(() => {
+    console.log(coffeeCart)
+  },[coffeeCart])
 
   return (
     <CoffeeContainer>

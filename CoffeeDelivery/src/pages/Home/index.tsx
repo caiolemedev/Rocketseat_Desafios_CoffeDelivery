@@ -2,14 +2,7 @@ import { ShoppingCart, Package, Timer, Coffee, IconContext } from "@phosphor-ico
 import copo from '../../assets/home_copo.png'
 import { CoffeeCard } from "./components/CoffeeCard"
 import { HomeCoffeeList, HomeCoffeeListCountainer, HomeContainer, HomeIntro, HomeItems, HomeTitle, ImageContainer } from "./styles"
-import { CoffeeInfo, coffeeTypes } from "./components/CoffeeCard/coffeetypes"
-import { createContext } from "react"
-
-interface CoffeesContextType {
-  Coffee: CoffeeInfo
-}
-
-export const CoffeesContext = createContext({} as CoffeesContextType)
+import { coffeeTypes } from "./components/CoffeeCard/coffeetypes"
 
 export function Home() {
   return (
@@ -50,20 +43,17 @@ export function Home() {
       <HomeCoffeeListCountainer>
         <h2>Nossos Cafés</h2>
         
-        <CoffeesContext.Provider value={{}}>
-          <HomeCoffeeList>
-            {coffeeTypes.map((coffee) => {return (
-              <CoffeeCard
-                key={coffee.CoffeeName}
-                CoffeeName={coffee.CoffeeName}
-                CoffeeDescription={coffee.CoffeeDescription}
-                CoffeeType={coffee.CoffeeType}
-                CoffeePrice={coffee.CoffeePrice}
-              />
-            )})}
-            
-          </HomeCoffeeList>
-        </CoffeesContext.Provider>
+        <HomeCoffeeList>
+          {coffeeTypes.map((coffee) => {return (
+            <CoffeeCard
+              key={coffee.CoffeeName}
+              CoffeeName={coffee.CoffeeName}
+              CoffeeDescription={coffee.CoffeeDescription}
+              CoffeeType={coffee.CoffeeType}
+              CoffeePrice={coffee.CoffeePrice}
+            />
+          )})}    
+        </HomeCoffeeList>
 
       </HomeCoffeeListCountainer>
     </HomeContainer>
