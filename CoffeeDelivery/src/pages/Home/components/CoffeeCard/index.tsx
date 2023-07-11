@@ -10,7 +10,7 @@ interface CoffeeCartItem {
   CartCoffeeQty: number
 }
 
-interface CoffeeCart extends Array<CoffeeCartItem>{}
+type CoffeeCart = Array<CoffeeCartItem>
 
 export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePrice}: CoffeeInfo) {
   const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(1)
@@ -33,6 +33,18 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
   }
 
   function addToCart() {
+    const updatedCoffeeItem = coffeeCart.findIndex((item) => {
+      return item.CartCoffeeName == CoffeeName
+    })
+
+    if (updatedCoffeeItem < 0) {
+      const newCoffeeCart = [...coffeeCart, {CartCoffeeName: CoffeeName, CartCoffeeQty: coffeeQtyScreen}]
+
+      setCoffeeCart(newCoffeeCart)
+    } else {
+      console.log("item já cadastrado")
+    }
+    
 /*     const updatedCoffeeItem = coffeeCart.findIndex((item) => {
       return item.CartCoffeeName === CoffeeName
     })
