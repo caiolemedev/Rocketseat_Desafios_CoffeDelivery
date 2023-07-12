@@ -43,30 +43,13 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
       setCoffeeCart(newCoffeeCart)
     } else {
       console.log("item já cadastrado")
+      const toUpdate = coffeeCart.map(item => {
+        if (item.CartCoffeeName == CoffeeName)
+          {item.CartCoffeeQty += coffeeQtyScreen}
+        return item
+      })
+      setCoffeeCart(toUpdate)
     }
-    
-/*     const updatedCoffeeItem = coffeeCart.findIndex((item) => {
-      return item.CartCoffeeName === CoffeeName
-    })
-
-    if (updatedCoffeeItem < 0 ) {
-      return coffeeCart
-    }
-
-    return coffeeCart[updatedCoffeeItem].CartCoffeeQty = coffeeQtyScreen
-
-    coffeeCart.map(item => {
-      if (item.CartCoffeeName == CoffeeName) {
-        updatedCoffeeItemQty = item.CartCoffeeQty+coffeeQtyScreen
-      }
-      else {
-        updatedCoffeeItemQty = coffeeQtyScreen
-      }
-    })
-
-
-
-    setCoffeeCart() */
   }
 
   useEffect(() => {
