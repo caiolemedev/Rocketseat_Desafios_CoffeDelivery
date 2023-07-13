@@ -3,11 +3,12 @@ import expresso from '../../../../assets/expresso.png'
 
 import { CoffeeButtonContainer, CoffeeCart, CoffeeContainer, CoffeePlusMinus, CoffeeTypeContainer } from './styles'
 import { useEffect, useState } from 'react'
-import { CoffeeInfo } from './coffeetypes'
+import { CoffeeInfo, coffeeTypes } from './coffeetypes'
 
 interface CoffeeCartItem {
   CartCoffeeName: string
   CartCoffeeQty: number
+  CartCoffeeTotal: number
 }
 
 type CoffeeCart = Array<CoffeeCartItem>
@@ -38,14 +39,16 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
     })
 
     if (updatedCoffeeItem < 0) {
-      const newCoffeeCart = [...coffeeCart, {CartCoffeeName: CoffeeName, CartCoffeeQty: coffeeQtyScreen}]
+      const newCoffeeCart = [...coffeeCart, {CartCoffeeName: CoffeeName, CartCoffeeQty: coffeeQtyScreen, CartCoffeeTotal: coffeeQtyScreen*CoffeePrice}]
 
       setCoffeeCart(newCoffeeCart)
     } else {
       console.log("item já cadastrado")
       const toUpdate = coffeeCart.map(item => {
         if (item.CartCoffeeName == CoffeeName)
-          {item.CartCoffeeQty += coffeeQtyScreen}
+          {item.CartCoffeeQty += coffeeQtyScreen
+            item.CartCoffeeTotal = CoffeePrice*item.CartCoffeeQty
+          }
         return item
       })
       setCoffeeCart(toUpdate)

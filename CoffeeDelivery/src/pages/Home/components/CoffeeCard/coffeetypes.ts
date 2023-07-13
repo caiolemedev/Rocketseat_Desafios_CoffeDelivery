@@ -3,7 +3,7 @@ export interface CoffeeInfo {
   CoffeeType: string[];
   CoffeeName: string;
   CoffeeDescription: string;
-  CoffeePrice: string;
+  CoffeePrice: number;
 }
 
 export const coffeeTypes: CoffeeInfo[] = [{
@@ -11,7 +11,7 @@ export const coffeeTypes: CoffeeInfo[] = [{
   CoffeeImg: '../../../../assets/expresso.png',
   CoffeeType: ['TRADICIONAL'],
   CoffeeDescription: 'O tradicional café feito com água quente e grãos moídos',
-  CoffeePrice: '9,90',
+  CoffeePrice: 9.90,
 },{
   CoffeeName: 'Expresso Americano',
   CoffeeImg: '',
