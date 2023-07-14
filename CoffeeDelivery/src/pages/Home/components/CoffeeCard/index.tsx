@@ -3,7 +3,7 @@ import expresso from '../../../../assets/expresso.png'
 
 import { CoffeeButtonContainer, CoffeeCart, CoffeeContainer, CoffeePlusMinus, CoffeeTypeContainer } from './styles'
 import { useEffect, useState } from 'react'
-import { CoffeeInfo, coffeeTypes } from './coffeetypes'
+import { CoffeeInfo } from './coffeetypes'
 
 interface CoffeeCartItem {
   CartCoffeeName: string
@@ -39,7 +39,7 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
     })
 
     if (updatedCoffeeItem < 0) {
-      const newCoffeeCart = [...coffeeCart, {CartCoffeeName: CoffeeName, CartCoffeeQty: coffeeQtyScreen, CartCoffeeTotal: coffeeQtyScreen*CoffeePrice}]
+      const newCoffeeCart = [...coffeeCart, {CartCoffeeName: CoffeeName, CartCoffeeQty: coffeeQtyScreen, CartCoffeeTotal: coffeeQtyScreen*Number(CoffeePrice)}]
 
       setCoffeeCart(newCoffeeCart)
     } else {
@@ -47,7 +47,7 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
       const toUpdate = coffeeCart.map(item => {
         if (item.CartCoffeeName == CoffeeName)
           {item.CartCoffeeQty += coffeeQtyScreen
-            item.CartCoffeeTotal = CoffeePrice*item.CartCoffeeQty
+            item.CartCoffeeTotal = Number(CoffeePrice)*item.CartCoffeeQty
           }
         return item
       })
@@ -73,7 +73,7 @@ export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePri
       <p className='CoffeeDescription'>{CoffeeDescription}</p>
 
       <CoffeeButtonContainer>
-        <span>R$</span><span className='CoffeePrice'>{CoffeePrice}</span>
+        <span>R$</span><span className='CoffeePrice'>{CoffeePrice.replace(".",",")}</span>
         
         <CoffeePlusMinus>
           <button type='button' onClick={handleReduceCoffeeQtyScreen}>
