@@ -2,7 +2,7 @@ import { Plus, Minus, ShoppingCart } from '@phosphor-icons/react'
 import expresso from '../../../../assets/expresso.png'
 
 import { CoffeeButtonContainer, CoffeeCart, CoffeeContainer, CoffeePlusMinus, CoffeeTypeContainer } from './styles'
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { CoffeeInfo } from './coffeetypes'
 
 interface CoffeeCartItem {
@@ -12,6 +12,12 @@ interface CoffeeCartItem {
 }
 
 type CoffeeCart = Array<CoffeeCartItem>
+
+interface CoffeeCartContextType {
+  coffeeCart: CoffeeCart | undefined
+}
+
+export const CoffeeContext = createContext({} as CoffeeCartContextType)
 
 export function CoffeeCard({CoffeeName, CoffeeDescription, CoffeeType, CoffeePrice}: CoffeeInfo) {
   const [coffeeQtyScreen, setCoffeeQtyScreen] = useState<number>(1)

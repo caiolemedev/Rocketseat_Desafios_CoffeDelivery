@@ -1,10 +1,12 @@
 import { ShoppingCart, Package, Timer, Coffee, IconContext } from "@phosphor-icons/react"
 import copo from '../../assets/home_copo.png'
-import { CoffeeCard } from "./components/CoffeeCard"
+import { CoffeeCard, CoffeeContext } from "./components/CoffeeCard"
 import { HomeCoffeeList, HomeCoffeeListCountainer, HomeContainer, HomeIntro, HomeItems, HomeTitle, ImageContainer } from "./styles"
 import { coffeeTypes } from "./components/CoffeeCard/coffeetypes"
+import { useContext } from "react"
 
 export function Home() {
+  const { coffeeCart } = useContext(CoffeeContext)
   return (
     <HomeContainer>
       <HomeIntro>
